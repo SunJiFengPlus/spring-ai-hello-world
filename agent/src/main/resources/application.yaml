@@ -10,5 +10,6 @@ spring:
         options:
           model: deepseek-chat
       base-url: https://api.deepseek.com
+      #base-url: http://localhost:8888
       embedding:
         enabled: false

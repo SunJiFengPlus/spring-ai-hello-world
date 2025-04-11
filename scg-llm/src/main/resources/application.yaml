@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: llm-proxy
+          uri: https://api.deepseek.com/v1/chat/completions
+          predicates:
+            - Method=POST
+server:
+  port: 8888
