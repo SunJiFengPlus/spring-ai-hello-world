@@ -1,0 +1,22 @@
+spring:
+  main:
+    web-application-type: none
+  application:
+    name: sse-mcp-client
+  ai:
+#    dashscope:
+#      api-key: sk-7021dc337f2e43b09f20ea93bd9421f3
+    openai:
+      api-key: sk-7d22f0384b2341448cecd8e2214f1eea
+      chat:
+        options:
+          model: deepseek-chat
+      base-url: https://api.deepseek.com
+      embedding:
+        enabled: false
+    mcp:
+      client:
+        sse:
+          connections:
+            weather-server:
+              url: http://localhost:8080

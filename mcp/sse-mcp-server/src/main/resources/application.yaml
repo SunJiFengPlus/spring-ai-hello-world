@@ -1,0 +1,9 @@
+server:
+  port: 8080  # 服务器端口配置
+
+spring:
+  ai:
+    mcp:
+      server:
+        name: my-weather-server
+        version: 0.0.1

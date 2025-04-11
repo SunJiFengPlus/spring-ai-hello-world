@@ -1,0 +1,10 @@
+spring:
+  ai:
+    dashscope:
+      # 配置通义千问API密钥
+      api-key: sk-7021dc337f2e43b09f20ea93bd9421f3
+    mcp:
+      client:
+        stdio:
+          # 指定MCP服务器配置文件路径（推荐）
+          servers-configuration: classpath:/mcp-servers-config.json
