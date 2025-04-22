@@ -5,11 +5,23 @@ spring:
     name: agent-test
   ai:
     openai:
+#      base-url: http://localhost:8888
+#      api-key: your-api-key
+#      chat:
+#        options:
+#          model: deepseek-chat
+#          http-headers:
+#            x-tenant-id: tenant1
+#            x-model-provider: deepseek
+      
+      base-url: http://localhost:8888/compatible-mode
       api-key: your-api-key
       chat:
         options:
-          model: deepseek-chat
-      base-url: https://api.deepseek.com
-      #base-url: http://localhost:8888
+          model: qwen-plus
+          http-headers:
+            x-tenant-id: tenant1
+            x-model-provider: dashscope
+      
       embedding:
         enabled: false

@@ -2,13 +2,28 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: llm-proxy
+#        - id: llm-proxy
+#          uri: https://api.deepseek.com/v1/chat/completions
+#          predicates:
+#            - Path=/v1/chat/completions
+#        - id: sse-proxy
+#          uri: http://localhost:8080
+#          predicates:
+#            - Path=/sse,/mcp/message
+
+        - id: tenant1-deepseek
           uri: https://api.deepseek.com/v1/chat/completions
           predicates:
+            - Header=x-tenant-id,tenant1
+            - Header=x-model-provider,deepseek
             - Path=/v1/chat/completions
-        - id: sse-proxy
-          uri: http://localhost:8080
+
+        - id: tenant1-dashscope
+          uri: https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
           predicates:
-            - Path=/sse,/mcp/message
+            - Header=x-tenant-id,tenant1
+            - Header=x-model-provider,dashscope
+            - Path=/compatible-mode/v1/chat/completions
+
 server:
   port: 8888
